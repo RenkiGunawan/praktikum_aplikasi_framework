@@ -64,9 +64,9 @@ void main() {
 }
 
 class RekeningBank {
-  String namaPemilik;
-  String namaBank;
-  int saldo;
+  late String namaPemilik;
+  late String namaBank;
+  late int saldo;
 
   set setNamaPemilik(String nama) {
     this.namaPemilik = nama;
