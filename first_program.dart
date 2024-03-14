@@ -3,7 +3,7 @@ void main() {
 
   //Komentar
   //1 line
-  /multi lines/
+//   /multi lines/
 
   //String
   var name = 'Voyager I';
@@ -28,4 +28,3 @@ void main() {
   print(image);
   print('Status login: $isLoggedIn');
 }
-
