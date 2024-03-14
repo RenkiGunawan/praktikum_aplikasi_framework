@@ -1,6 +1,6 @@
 void main() {
-  String nama = ' Rifqi Eka Hardianto ';
-  String daftarHewan = "Kucing, Kuda, Kambing";
+  String nama = (' Rifqi Eka Hardianto ');
+  String daftarHewan = ("Kucing, Kuda, Kambing");
   var angka = 17;
 
   // cek apakah mengandung string tertentu
@@ -33,3 +33,4 @@ void main() {
   print(nama.trimRight());
 
   // menghilangkan…
+}
