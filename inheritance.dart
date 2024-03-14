@@ -1,58 +1,63 @@
 void main() {
-  print('Mobil');
-  Mobil avanta = new Mobil(roda: 4);
-  print(avanta.suaraKlakson);
-  avanta.jumlahRoda(avanta.roda);
-  avanta.berjalan();
+  mobil Avanta = new mobil(roda: 4); //membuat objek baru
+  Avanta.klakson();
+  print(Avanta.suaraKlakson);
+  Avanta.jumlahroda(Avanta.roda);
+  Avanta.berjalan();
 
-  print('Motor');
-  Motor honta = new Motor(roda: 2);
-  honta.jumlahRoda(honta.roda);
-  honta.berjalan();
+  motor supra = new motor(roda: 2);
+  supra.jumlahroda(supra.roda);
+  supra.berjalan();
 }
 
-abstract class Kendaraan {
-  String suaraKlakson = 'tiiiiinnnnn';
-
-  void klakson() {
+abstract class kendaraan {
+  //tidak bisa dibuat jadi objek
+//dibuat menjadi kerangka yang akan diwariskan sifatnya ke kelas yang lain
+  String suaraKlakson = 'teeeee';
+  klakson() {
+    //method untuk suara klakson
     print(suaraKlakson);
   }
 
-  void jumlahRoda(int roda) {
+  jumlahroda(int roda) {
     print(roda);
   }
 
-  void berjalan();
+  berjalan();
 }
 
-class Mobil extends Kendaraan {
-  int roda;
-  Mobil({this.roda});
+class mobil extends kendaraan {
+  //mendapatkan inheritance dari kendaraan
+  late int roda;
+  mobil(
+      {required this.roda}); //required ini berfungsi untuk wajib mengisi parameter
+  //pada objek
 
   @override
-  void jumlahRoda(int roda) {
-    print('Roda mobil: $roda');
-    super.jumlahRoda(roda);
+  jumlahroda(int roda) {
+    print('Jumlah roda $roda');
+    super.jumlahroda(roda); //mencetak kembali jumlah roda
   }
 
   @override
-  void berjalan() {
-    print('mobil berjalan');
+  berjalan() {
+    print("mobil berjalan");
   }
 }
 
-class Motor extends Kendaraan {
-  int roda;
-  Motor({this.roda});
+class motor extends kendaraan {
+  //mendapatkan inheritance dari kendaraan
+  late int roda;
+  motor({required this.roda});
 
   @override
-  void jumlahRoda(int roda) {
-    print('Roda motor: $roda');
-    super.jumlahRoda(roda);
+  jumlahroda(int roda) {
+    print('Jumlah roda $roda');
+    super.jumlahroda(roda); //mencetak kembali jumlah roda
   }
 
   @override
-  void berjalan() {
-    print('motor berjalan');
+  berjalan() {
+    print("motor berjalan");
   }
 }
