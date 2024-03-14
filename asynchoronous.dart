@@ -8,7 +8,7 @@ Future<String> printData() async {
     var data = await fetchData();
     return 'data: $data';
   } catch (err) {
-    return err;
+    return err.toString(); //Mengubah err menjadi string
   }
 }
 
