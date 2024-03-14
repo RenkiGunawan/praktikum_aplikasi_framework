@@ -21,46 +21,29 @@
 */
 
 void main() {
-  RekeningBank rekeningRifqi = new RekeningBank();
-  rekeningRifqi.namaPemilik = 'Rifqi Eka Hardianto';
-  rekeningRifqi.namaBank = 'BTA';
-  rekeningRifqi.saldo = 10000000000;
-  print(rekeningRifqi.namaPemilik);
-  print(rekeningRifqi.namaBank);
-  print(rekeningRifqi.saldo);
-  rekeningRifqi.cekSaldo();
-  print('---------------------');
+  RekeningBank rekeningrifqi = new RekeningBank(
+      namaPemilik: 'rifqi',
+      namaBank: 'bca',
+      saldo: 10000000000); //membuat objek dari class
+  rekeningrifqi.cekSaldo();
+  print(rekeningrifqi.saldo);
+  print(rekeningrifqi.namaPemilik);
+  print(rekeningrifqi.namaBank);
+  rekeningrifqi.setSaldo = 20000000000;
+  rekeningrifqi.setNamaBank = 'BCA';
+  rekeningrifqi.setNamaPemilik = 'Rifqi Eka Hardianto';
+  print(rekeningrifqi.getSaldo);
+  print(rekeningrifqi.getNama);
+  print(rekeningrifqi.getNamaBank);
 
-  RekeningBank rekeningEka = new RekeningBank(
-    namaPemilik: 'Eka Husein',
-    namaBank: 'ATB',
-    saldo: 5000000,
-  );
-  print(rekeningEka.saldo);
-  rekeningEka.cekSaldo();
-  print('---------------------');
+  RekeningBank rekeningalek = new RekeningBank(
+      namaPemilik: 'ahui', namaBank: 'bca', saldo: 50000000000);
 
-  RekeningBank rekeningDian = new RekeningBank(
-    namaPemilik: 'Dian Eka',
-    namaBank: 'TAB',
-    saldo: 20000000,
-  );
-  print(rekeningDian.getPemilik);
-  print(rekeningDian.getBank);
-  print(rekeningDian.saldo);
-  rekeningDian.setNamaPemilik = 'Rifqi Dian';
-  rekeningDian.setNamaBank = 'Bank Rakyat';
-  rekeningDian.setSaldo = 50000000;
-  print(rekeningDian.getPemilik);
-  print(rekeningDian.getBank);
-  print(rekeningDian.getSaldo);
-  print('---------------------');
+  rekeningalek.cekSaldo();
 
-  RekeningBank rekeningOwo = new RekeningBank.Owo(
-    namaPemilik: 'Owo Hardianto',
-    saldo: 200000,
-  );
-  print(rekeningOwo.getBank);
+  RekeningBank rekeningowo =
+      new RekeningBank.Owo(namaPemilik: 'owo ahui', saldo: 10000);
+  print(rekeningowo.getNamaBank);
 }
 
 class RekeningBank {
@@ -68,39 +51,42 @@ class RekeningBank {
   late String namaBank;
   late int saldo;
 
-  set setNamaPemilik(String nama) {
-    this.namaPemilik = nama;
-  }
-
-  set setNamaBank(String nama) {
-    this.namaBank = nama;
-  }
-
   set setSaldo(int saldoBaru) {
     this.saldo = saldoBaru;
   }
 
-  String get getPemilik {
-    return namaPemilik;
+  set setNamaPemilik(String nama) {
+    this.namaPemilik = nama;
   }
 
-  String get getBank {
-    return namaBank;
+  set setNamaBank(String nama_bank) {
+    this.namaBank = nama_bank;
   }
 
   int get getSaldo {
     return saldo;
   }
 
-  RekeningBank({this.namaPemilik, this.namaBank, this.saldo});
-  RekeningBank.Owo({this.namaPemilik, this.namaBank = 'OWO', this.saldo});
+  String get getNama {
+    return namaPemilik;
+  }
 
+  String get getNamaBank {
+    return namaBank;
+  }
+
+  RekeningBank(
+      {required this.namaPemilik, required this.namaBank, required this.saldo});
+
+  RekeningBank.Owo(
+      {required this.namaPemilik, this.namaBank = 'BRI', required this.saldo});
+  
   cekSaldo() {
-    print('Saldo saat ini: $saldo');
+    print('saldo saat ini $saldo');
   }
 
   transfer() {
-    print('transfer');
+    print('transfer saldo');
   }
 
   ambilSaldo() {
